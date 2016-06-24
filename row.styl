@@ -1,0 +1,26 @@
+// Блок строки.
+.row
+  
+  &:before, &:after
+    display: table
+    content: ''
+    clear: both
+  
+  &__item
+    display: block
+    min-height: 1px
+    float: left
+    
+    &--right
+      float: right
+      
+    for $i in (1..12)
+      
+      &--size-{$i}
+        width: ((100% / 12) * $i)
+      
+  for $i in (1..12)
+    
+    &--cols-{$i} .row__item
+      width: (100% / $i)
+      
