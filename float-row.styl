@@ -1,0 +1,14 @@
+// Миксин для создания строки float-элементов.
+float-row()
+  
+  &:after
+    display: table
+    content: ''
+    clear: both
+  
+  & > &__item
+    float: left
+  
+    &--right
+      float: right
+    
